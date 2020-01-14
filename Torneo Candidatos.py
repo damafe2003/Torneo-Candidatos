@@ -28,10 +28,11 @@ for x in range(n):
                 puntos[i]=puntos[i]+ resultado.count(lista[i])+resultado.count("empate")/2
                 puntos[j]=puntos[j]+resultado.count(lista[j])+resultado.count("empate")/2
 #---------------------------------------------           
-    
+   
     maximo=max(puntos)
     indices = [i for i in range(len(puntos)) if puntos[i] == maximo]
-    if len(indices)>1:
+    if len(indices)>1:#Checking if there is more than 1 winner 
+#playing the tiebreak if there is more than 1 winner
         for y in indices:
             for z in indices:
                 if lista[y]!=lista[z]:
@@ -41,7 +42,7 @@ for x in range(n):
         maximoD=max(puntosD)
         indicesD = [i for i in range(len(puntosD)) if puntosD[i] == maximoD]
         for i in indicesD:
-            victorias[i]=victorias[i]+1/len(indicesD)
+            victorias[i]=victorias[i]+1/len(indicesD)#sharing the point
     else:
         for i in indices:
             victorias[i]=victorias[i]+1
